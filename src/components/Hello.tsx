@@ -39,7 +39,10 @@ function Hello() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="pt-20 pb-10 px-[170px]">
+    <section
+      ref={sectionRef}
+      id="about"
+      className="pt-20 pb-10 px-4 lg:px-[170px]">
       <h2
         ref={headingRef}
         className="text-4xl font-bold mb-4 text-center text-primary">

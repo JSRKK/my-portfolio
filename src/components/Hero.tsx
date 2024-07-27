@@ -60,18 +60,18 @@ function Hero() {
       className="flex flex-col justify-center items-center text-center h-screen overflow-hidden relative">
       <h1
         ref={h1Ref}
-        className="absolute top-1/2 -translate-y-1/2 text-secondary text-[250px] font-medium leading-[300px]">
+        className="absolute top-1/2 -translate-y-1/2 text-secondary text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[250px] font-medium leading-tight sm:leading-snug md:leading-normal lg:leading-relaxed xl:leading-[300px]">
         Frontend Developer
       </h1>
       <div
         ref={imageRef}
-        className="absolute -bottom-[40px] w-[768px] h-[668px]">
+        className="absolute bottom-0 lg:-bottom-[5%] w-full sm:w-[80%] md:w-[70%] lg:w-[768px] h-[400px] md:h-[550px] lg:h-[668px]">
         <Image
           className="object-cover object-top pointer-events-none"
           src="/images/mr-bone.png"
           alt="Mr bone"
           fill
-          sizes="100vh"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 768px"
           quality={100}
           priority
         />

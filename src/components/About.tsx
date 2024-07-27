@@ -42,7 +42,7 @@ function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="py-10 px-[170px]">
+    <section ref={sectionRef} id="about" className="py-10 px-4 lg:px-[170px]">
       <h2
         ref={headingRef}
         className="text-4xl font-bold mb-8 text-primary text-center">

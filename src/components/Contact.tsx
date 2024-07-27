@@ -3,7 +3,7 @@ import { Mail, Linkedin, Github } from "lucide-react";
 
 function Contact() {
   return (
-    <section id="contact" className="py-10 px-[170px]">
+    <section id="contact" className="py-10 px-4 lg:px-[170px]">
       <h2 className="text-4xl font-bold mb-8 text-primary text-center">
         Contact
       </h2>
