@@ -106,12 +106,12 @@ function Projects() {
             }}
             className="bg-black-1 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-primary/10">
             <Image
+              className="w-full h-48 object-cover"
               src={project.image}
               alt={project.title}
               width={300}
               height={200}
               quality={100}
-              className="w-full h-48 object-cover"
             />
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-2 text-primary">
