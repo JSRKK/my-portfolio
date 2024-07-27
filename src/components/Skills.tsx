@@ -62,7 +62,9 @@ function Skills() {
 
   return (
     <section ref={sectionRef} id="skills" className="py-10 px-[170px]">
-      <h2 ref={headingRef} className="text-4xl font-bold mb-8 text-primary">
+      <h2
+        ref={headingRef}
+        className="text-4xl font-bold mb-8 text-primary text-center">
         Skills
       </h2>
       <div className="flex justify-center flex-wrap gap-6">

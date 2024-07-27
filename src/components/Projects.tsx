@@ -87,7 +87,9 @@ function Projects() {
 
   return (
     <section ref={sectionRef} id="projects" className="py-10 px-[170px]">
-      <h2 ref={headingRef} className="text-4xl font-bold mb-8 text-primary">
+      <h2
+        ref={headingRef}
+        className="text-4xl font-bold mb-8 text-primary text-center">
         Featured Projects
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

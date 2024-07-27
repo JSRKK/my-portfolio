@@ -1,10 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
-function About() {
+function Hello() {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const paragraphRef = useRef<HTMLParagraphElement>(null);
@@ -42,22 +39,17 @@ function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="py-10 px-[170px]">
+    <section ref={sectionRef} id="about" className="pt-20 pb-10 px-[170px]">
       <h2
         ref={headingRef}
-        className="text-4xl font-bold mb-8 text-primary text-center">
-        About Me
+        className="text-4xl font-bold mb-4 text-center text-primary">
+        {`Hi! I'm Jay`}
       </h2>
       <p ref={paragraphRef} className="max-w-3xl mx-auto text-xl">
-        {`Working as a software developer has been a challenging and exciting
-        journey for me. I have learned and developed my skills in creating
-        innovative and valuable applications. Collaborating with knowledgeable
-        and supportive teams has helped me grow and learn new things constantly.
-        What I love most about software development is solving complex problems
-        and seeing our work improve people's lives.`}
+        {`I am a passionate software developer specializing in web application development. With over 5 years of experience in the industry, I am dedicated to building powerful and user-friendly applications that positively impact people's lives.`}
       </p>
     </section>
   );
 }
 
-export default About;
+export default Hello;

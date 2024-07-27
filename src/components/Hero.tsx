@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
@@ -6,26 +5,17 @@ import { gsap } from "gsap";
 function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const h1Ref = useRef<HTMLHeadingElement>(null);
-  const h2Ref = useRef<HTMLHeadingElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Animate h1
       gsap.from(h1Ref.current, {
-        y: -100,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-      });
-
-      // Animate h2
-      gsap.from(h2Ref.current, {
         scale: 1.5,
         opacity: 0,
         duration: 1.5,
         ease: "power4.out",
-        delay: 0.5,
+        delay: 0.3,
       });
 
       // Animate image
@@ -34,11 +24,11 @@ function Hero() {
         opacity: 0,
         duration: 1.5,
         ease: "power3.out",
-        delay: 1,
+        delay: 0.8,
       });
 
       // Scroll-based animations
-      gsap.to([h1Ref.current, h2Ref.current], {
+      gsap.to([h1Ref.current], {
         top: -300,
         ease: "none",
         scrollTrigger: {
@@ -49,8 +39,7 @@ function Hero() {
         },
       });
       gsap.to([imageRef.current], {
-        yPercent: -50,
-        height: "768px",
+        height: "1000px",
         ease: "none",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -71,14 +60,9 @@ function Hero() {
       className="flex flex-col justify-center items-center text-center h-screen overflow-hidden relative">
       <h1
         ref={h1Ref}
-        className="absolute top-[100px] text-7xl font-bold mb-4 text-primary">
-        {`Hello! I'm Jay`}
-      </h1>
-      <h2
-        ref={h2Ref}
         className="absolute top-1/2 -translate-y-1/2 text-secondary text-[250px] font-medium leading-[300px]">
         Frontend Developer
-      </h2>
+      </h1>
       <div
         ref={imageRef}
         className="absolute -bottom-[40px] w-[768px] h-[668px]">
