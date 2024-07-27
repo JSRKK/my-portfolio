@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import { gsap } from "gsap";
 
 const projectsData = [
   {
     title: "MyCloud Fulfillment",
     description:
       "eveloped a comprehensive warehouse management and shipping system for e-commerce businesses in Southeast Asia. This system supports product management from various sales channels such as Lazada, Shopee, and consignment stores.",
-    image: "/api/placeholder/300/200",
+    image: "/images/mycloud.jpeg",
     stats: {
       spineTingles: "98%",
       userSatisfaction: "4.5*",
@@ -16,7 +17,7 @@ const projectsData = [
     title: "Mareads",
     description:
       "Created a platform for reading novels, comics, and e-books online, with a support system for writers and publishers.",
-    image: "/api/placeholder/300/200",
+    image: "/images/mareads.jpg",
     stats: {
       conversionRate: "85%",
       customerRetention: "92%",
@@ -26,7 +27,7 @@ const projectsData = [
     title: "G-BOOK",
     description:
       "Developed a digital platform to help teachers create intelligent teaching aids, reducing workload and increasing student understanding.",
-    image: "/api/placeholder/300/200",
+    image: "/images/gbook.jpg",
     stats: {
       dataClarity: "96%",
       userEfficiency: "89%",
@@ -36,7 +37,7 @@ const projectsData = [
     title: "AIMS DMS",
     description:
       "Developed an all-in-one document management system for efficient, organized, and secure document handling. This system helps elevate organizational productivity to new heights.",
-    image: "/api/placeholder/300/200",
+    image: "/images/aims_dms.jpg",
     stats: {
       dataClarity: "96%",
       userEfficiency: "89%",
@@ -45,33 +46,73 @@ const projectsData = [
 ];
 
 function Projects() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Animation for the heading
+      gsap.from(headingRef.current, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "top 50%",
+          scrub: 1,
+        },
+      });
+
+      // Animation for the projects
+      projectRefs.current.forEach((project, index) => {
+        gsap.from(project, {
+          opacity: 0,
+          y: 100,
+          duration: 1,
+          scrollTrigger: {
+            trigger: project,
+            start: "top 90%",
+            end: "top 60%",
+            scrub: 1,
+          },
+          delay: index * 0.2, // Stagger effect
+        });
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="projects" className="py-10 px-[170px]">
-      <h2 className="text-4xl mb-8 text-primary">Featured Projects</h2>
+    <section ref={sectionRef} id="projects" className="py-10 px-[170px]">
+      <h2 ref={headingRef} className="text-4xl font-bold mb-8 text-primary">
+        Featured Projects
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projectsData.map((project, index) => (
           <div
             key={index}
-            className="bg-black-1 rounded-lg overflow-hidden transition-all duration-300 hover:translate-y-[-10px] hover:shadow-lg hover:shadow-primary/20">
+            ref={(el) => {
+              if (el) {
+                projectRefs.current[index] = el;
+              }
+            }}
+            className="bg-black-1 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-primary/10">
             <Image
               src={project.image}
               alt={project.title}
               width={300}
               height={200}
+              quality={100}
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-2 text-primary">
                 {project.title}
               </h3>
-              <p className="text-sm mb-4">{project.description}</p>
-              <div className="flex justify-between text-xs text-secondary">
-                {Object.entries(project.stats).map(([key, value], i) => (
-                  <span key={i}>
-                    {key}: {value}
-                  </span>
-                ))}
-              </div>
+              <p className="text-sm">{project.description}</p>
             </div>
           </div>
         ))}

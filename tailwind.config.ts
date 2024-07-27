@@ -14,6 +14,7 @@ const config: Config = {
         black: {
           DEFAULT: "#000000",
           1: "#333333",
+          2: "#252525",
         },
       },
     },

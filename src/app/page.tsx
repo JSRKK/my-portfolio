@@ -7,7 +7,9 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export default function Home() {
   return (
@@ -21,8 +23,7 @@ export default function Home() {
         <Contact />
       </main>
       <footer className="text-center py-8 mt-16 bg-accent-color">
-        <p>&copy; 2024 Mr. Bone Designs. All rights reserved.</p>
-        <p>Bringing structure to the digital world since 2010</p>
+        <p>&copy; 2024 Mr. Jay. All rights reserved.</p>
       </footer>
     </div>
   );

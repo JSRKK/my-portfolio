@@ -34,7 +34,7 @@ function Hero() {
         opacity: 0,
         duration: 1.5,
         ease: "power3.out",
-        delay: 0.8,
+        delay: 1,
       });
 
       // Scroll-based animations
@@ -68,18 +68,20 @@ function Hero() {
     <section
       ref={sectionRef}
       id="home"
-      className="flex flex-col justify-center items-center text-center h-[calc(100dvh-68px)] pt-[150px] overflow-hidden relative">
+      className="flex flex-col justify-center items-center text-center h-screen overflow-hidden relative">
       <h1
         ref={h1Ref}
-        className="absolute top-[50px] text-7xl font-bold mb-4 text-primary">
+        className="absolute top-[100px] text-7xl font-bold mb-4 text-primary">
         {`Hello! I'm Jay`}
       </h1>
       <h2
         ref={h2Ref}
-        className="absolute top-1/2 -translate-y-1/2 text-secondary text-[220px] font-medium">
+        className="absolute top-1/2 -translate-y-1/2 text-secondary text-[250px] font-medium leading-[300px]">
         Frontend Developer
       </h2>
-      <div ref={imageRef} className="absolute bottom-0 w-[768px] h-[668px]">
+      <div
+        ref={imageRef}
+        className="absolute -bottom-[40px] w-[768px] h-[668px]">
         <Image
           className="object-cover object-top pointer-events-none"
           src="/images/mr-bone.png"
