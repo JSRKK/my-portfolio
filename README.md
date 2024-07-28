@@ -45,7 +45,7 @@ my-portfolio/
 1. Clone the repository
 
    ```sh
-   git clone https://github.com/your-username/my-portfolio.git
+   git clone https://github.com/JSRKK/my-portfolio.git
    ```
 
 2. Change into the project directory
