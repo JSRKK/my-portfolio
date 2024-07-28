@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Portfolio
 
-## Getting Started
+Welcome to my portfolio repository! This project showcases my skills and experiences as a Frontend Developer.
 
-First, run the development server:
+## 🚀 Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Next.js
+- TypeScript
+- Tailwind CSS
+- GSAP (GreenSock Animation Platform)
+- Lucide React (for icons)
+
+## 🌟 Features
+
+- Responsive design
+- Smooth scrolling navigation
+- Animated sections using GSAP
+- Dynamic project showcase
+- Contact information with clickable links
+
+## 📂 Project Structure
+
+```
+my-portfolio/
+├── components/
+│   ├── Header.tsx
+│   ├── Hero.tsx
+│   ├── About.tsx
+│   ├── Skills.tsx
+│   ├── Projects.tsx
+│   └── Contact.tsx
+├── pages/
+│   └── index.tsx
+├── styles/
+│   └── globals.css
+├── public/
+│   └── images/
+│       └── mr-bone.png
+├── tailwind.config.js
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Installation & Set Up
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```sh
+   git clone https://github.com/your-username/my-portfolio.git
+   ```
 
-## Learn More
+2. Change into the project directory
 
-To learn more about Next.js, take a look at the following resources:
+   ```sh
+   cd my-portfolio
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Install dependencies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```sh
+   yarn install
+   ```
 
-## Deploy on Vercel
+4. Start the development server
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```sh
+   yarn dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 🚀 Building for Production
+
+1. Create a production build
+
+   ```sh
+   yarn build
+   ```
+
+2. Start the production server
+   ```sh
+   yarn start
+   ```
+
+## 🎨 Customization
+
+Feel free to customize the content, styles, and animations to make this portfolio your own. Update the project data in the `Projects.tsx` file, modify the skills in `Skills.tsx`, and update your personal information in `About.tsx` and `Contact.tsx`.
+
+## 📬 Contact
+
+For any inquiries or collaborations, please reach out to me:
+
+- Email: seera.kaenkaew8@gmail.com
+- LinkedIn: [https://www.linkedin.com/in/seera-kaenkaew-7735481a2](https://www.linkedin.com/in/seera-kaenkaew-7735481a2)
