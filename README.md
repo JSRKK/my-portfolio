@@ -2,6 +2,10 @@
 
 Welcome to my portfolio repository! This project showcases my skills and experiences as a Frontend Developer.
 
+## 🌐 Live Demo
+
+Check out the live version of my portfolio: [https://jsrkk.github.io/my-portfolio/](https://jsrkk.github.io/my-portfolio/)
+
 ## 🚀 Technologies Used
 
 - Next.js
