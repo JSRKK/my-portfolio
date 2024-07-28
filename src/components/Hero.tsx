@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { getAssetPrefix } from "@/lib/utils";
 
 function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -68,7 +69,7 @@ function Hero() {
         className="absolute bottom-0 lg:-bottom-[5%] w-full sm:w-[80%] md:w-[70%] lg:w-[768px] h-[400px] md:h-[550px] lg:h-[668px]">
         <Image
           className="object-cover object-top pointer-events-none"
-          src="/images/mr-bone.png"
+          src={getAssetPrefix("/images/mr-bone.png")}
           alt="Mr bone"
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 768px"

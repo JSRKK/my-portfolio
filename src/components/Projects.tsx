@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
+import { getAssetPrefix } from "@/lib/utils";
 
 const projectsData = [
   {
@@ -107,7 +108,7 @@ function Projects() {
             className="bg-black-1 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-primary/10">
             <Image
               className="w-full h-48 object-cover"
-              src={project.image}
+              src={getAssetPrefix(project.image)}
               alt={project.title}
               width={300}
               height={200}
